@@ -3,17 +3,20 @@ import {shallow} from 'enzyme';
 import Exercise1 from '../Exercise1';
 
 describe('Exercise1', () => {
-  let component;
-  let instance;
-  
-  beforeEach(() => {
-    component = shallow(<Exercise1/>);
-    instance = component.instance();
-  });
-  
-  describe('on instance', () => {
-    it('should defined state', () => {
-      expect(instance.state).toEqual({});
+  describe('Exercise1', () => {
+    it('should print 26 li', () => {
+      const wrapper = shallow(
+        <Exercise1 />,
+      );
+      const li = wrapper.find('li');
+      expect(li).toHaveLength(26);
+    });
+    it('should print 26 letters for line', () => {
+      const wrapper = shallow(
+        <Exercise1 />,
+      );
+      const li = wrapper.find('li');
+      expect(li.length).toEqual(26);
     });
   });
 });
