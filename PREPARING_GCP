@@ -4,11 +4,11 @@ docker run -p 3000:3000 coding-dojo
 open http://localhost:3000
 
 ## GCP
-docker tag coding-dojo gcr.io/coding-dojo-251421/coding-dojo:0.1.0
+docker tag coding-dojo gcr.io/coding-dojo-251421/coding-dojo:andresg
 gcloud init
 
-gcloud docker -- push gcr.io/coding-dojo-251421/coding-dojo:0.1.0
-gcloud container clusters create coding-dojo --create-subnetwork name=coding-dojo-net --enable-ip-alias --enable-private-nodes --master-ipv4-cidr 192.168.0.0/28 --enable-master-authorized-networks --master-authorized-networks 0.0.0.0/0 --no-enable-basic-auth --no-issue-client-certificate --zone us-central1-b --num-nodes 1
+gcloud docker -- push gcr.io/coding-dojo-251421/coding-dojo:andresg
+gcloud container clusters create coding-dojo-andresg --create-subnetwork name=coding-dojo-net-andresg --enable-ip-alias --enable-private-nodes --master-ipv4-cidr 192.168.0.0/28 --enable-master-authorized-networks --master-authorized-networks 0.0.0.0/0 --no-enable-basic-auth --no-issue-client-certificate --zone us-central1-a --num-nodes 1
 
 ### kubernetes
 gcloud components install kubectl
